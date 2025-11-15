@@ -1,0 +1,127 @@
+
+:root{
+  --bg-1: #0f172a; 
+  --bg-2: #0ea5a4; 
+  --card: rgba(255,255,255,0.04);
+  --glass: rgba(255,255,255,0.06);
+  --text: #e6eef8;
+  --muted: #bcd5dd;
+  --accent: #ffd166;
+  --max-width: 1100px;
+  --radius: 14px;
+  --shadow: 0 6px 22px rgba(2,6,23,0.6);
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  color:var(--text);
+  background: linear-gradient(135deg, var(--bg-1) 0%, #06202a 30%, #072c2a 55%, var(--bg-2) 100%);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.5;
+}
+
+.container{
+  width:90%;
+  max-width:var(--max-width);
+  margin:0 auto;
+}
+
+
+.site-header{
+  position:sticky;
+  top:0;
+  z-index:40;
+  backdrop-filter: blur(6px);
+  background: linear-gradient(180deg, rgba(3,7,18,0.3), rgba(3,7,18,0.15));
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+.header-inner{
+  display:flex;
+  align-items:center;
+  gap:20px;
+  padding:14px 0;
+}
+.brand{
+  font-weight:700;
+  font-size:1.1rem;
+  color:var(--text);
+  text-decoration:none;
+}
+.main-nav{margin-left:auto; display:flex; gap:14px; align-items:center}
+.main-nav a{color:var(--muted); text-decoration:none; font-weight:600; font-size:0.95rem; padding:6px 8px; border-radius:8px}
+.main-nav a:hover{color:var(--text); background:rgba(255,255,255,0.03)}
+.cta{margin-left:12px; text-decoration:none; padding:8px 12px; border-radius:10px; background:linear-gradient(90deg,var(--accent),#ffb86b); color:#0b1220; font-weight:700}
+
+
+.hero{padding:56px 0 36px}
+.hero-grid{
+  display:grid;
+  grid-template-columns:1fr 320px;
+  gap:28px;
+  align-items:center;
+}
+.hero-text h1{margin:0 0 8px; font-size:2.2rem}
+.lead{color:var(--muted); margin:8px 0 12px; font-size:1rem}
+.muted{color:rgba(255,255,255,0.6); font-size:0.9rem}
+.hero-links{display:flex; gap:10px; margin-top:14px}
+.button{display:inline-block; text-decoration:none; padding:8px 12px; background:rgba(255,255,255,0.06); border-radius:10px; color:var(--text); font-weight:600}
+.profile-pic {
+  width: 190px;
+  height: 190px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+  filter: drop-shadow(3px 3px 5px #333);
+}
+
+.button.outline{background:transparent; border:1px solid rgba(255,255,255,0.06)}
+
+
+.hero-card{
+  background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));
+  padding:18px;
+  border-radius:16px;
+  box-shadow: var(--shadow);
+  display:flex;
+  align-items:center;
+  gap:12px;
+  justify-content:center;
+}
+.avatar{width:120px; height:120px; border-radius:12px; background:linear-gradient(180deg,#0ea5a4,#60a5fa); display:block}
+
+
+.section{padding:36px 0}
+.section h2{margin:0 0 6px; font-size:1.4rem}
+.section-desc{color:var(--muted); margin-bottom:18px}
+.about-cards{display:flex; gap:14px; flex-wrap:wrap;font-style: italic;}
+.card{background:var(--card); padding:16px; border-radius:12px; min-width:220px; flex:1}
+
+
+.skills-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:14px}
+.skill{background:var(--glass); padding:16px; border-radius:12px}
+
+
+.projects-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:16px}
+.project-card{background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02)); border-radius:12px; overflow:hidden; display:flex; gap:12px; align-items:stretch}
+.project-card img{width:200px; height:200px; object-fit:cover}
+.project-body{padding:12px}
+.proj-links a{color:var(--accent); text-decoration:none; font-weight:700; margin-right:12px}
+
+
+.contact-grid{display:flex; gap:12px; flex-wrap:wrap}
+.contact-card{background:var(--card); padding:14px; border-radius:12px; min-width:180px}
+
+
+.site-footer{padding:18px 0 36px; border-top:1px solid rgba(255,255,255,0.03); margin-top:28px}
+.footer-inner{display:flex; justify-content:space-between; gap:12px; align-items:center; flex-wrap:wrap; color:var(--muted); font-size:0.9rem}
+
+
+@media (max-width:900px){
+  .hero-grid{grid-template-columns:1fr}
+  .skills-grid{grid-template-columns:1fr}
+  .projects-grid{grid-template-columns:1fr}
+  .main-nav{display:none}
+}
